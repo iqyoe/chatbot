@@ -1,0 +1,291 @@
+version: "2.0"
+stories:
+- story: ina ask ipower affirm
+  steps:
+  - intent: greet_ina
+  - action: utter_show_feature_ina
+  - intent: ask_ipower_ina
+  - action: utter_ipower_guide
+  - action: utter_did_that_help_ina
+  - intent: affirm_ina
+  - action: utter_happy_ina
+- story: ina ask ipower deny
+  steps:
+  - intent: greet_ina
+  - action: utter_show_feature_ina
+  - intent: ask_ipower_ina
+  - action: utter_ipower_guide
+  - action: utter_did_that_help_ina
+  - intent: deny_ina
+  - action: utter_goodbye_ina
+- story: interactive_story_1
+  steps:
+  - intent: greet_ina
+  - action: utter_show_feature_ina
+  - intent: ask_health_check_ina
+  - action: health_check_form
+  - active_loop: health_check_form
+  - slot_was_set:
+    - requested_slot: batuk
+  - slot_was_set:
+    - batuk: sering
+  - slot_was_set:
+    - batuk: sering
+  - slot_was_set:
+    - requested_slot: fever
+  - slot_was_set:
+    - fever: tidak
+  - slot_was_set:
+    - fever: tidak
+  - slot_was_set:
+    - requested_slot: flu
+  - slot_was_set:
+    - flu: pilek
+  - slot_was_set:
+    - flu: pilek
+  - slot_was_set:
+    - requested_slot: sakitTenggorokan
+  - slot_was_set:
+    - sakitTenggorokan: tenggorokan
+  - slot_was_set:
+    - sakitTenggorokan: tenggorokan
+  - slot_was_set:
+    - requested_slot: sesakNafas
+  - slot_was_set:
+    - sesakNafas: sedikit
+  - slot_was_set:
+    - sesakNafas: sedikit
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_health_assumption
+  - action: utter_goodbye_ina
+- story: interactive_story_2
+  steps:
+  - intent: greet_ina
+  - action: utter_show_feature_ina
+  - intent: ask_health_check_ina
+  - action: health_check_form
+  - active_loop: health_check_form
+  - slot_was_set:
+    - requested_slot: batuk
+  - slot_was_set:
+    - batuk: tidak
+  - slot_was_set:
+    - requested_slot: fever
+  - slot_was_set:
+    - fever: tidak
+  - slot_was_set:
+    - requested_slot: flu
+  - slot_was_set:
+    - flu: tidak
+  - slot_was_set:
+    - requested_slot: sakitTenggorokan
+  - slot_was_set:
+    - sakitTenggorokan: tidak
+  - slot_was_set:
+    - requested_slot: sesakNafas
+  - slot_was_set:
+    - sesakNafas: tidak
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_health_assumption
+  - action: utter_goodbye_ina
+- story: heath check sehat
+  steps:
+  - intent: greet_ina
+  - action: utter_show_feature_ina
+  - intent: ask_health_check_ina
+  - action: health_check_form
+  - active_loop: health_check_form
+  - slot_was_set:
+    - requested_slot: batuk
+  - slot_was_set:
+    - batuk: tidak
+  - slot_was_set:
+    - batuk: tidak
+  - slot_was_set:
+    - requested_slot: fever
+  - slot_was_set:
+    - fever: tidak
+  - slot_was_set:
+    - fever: tidak
+  - slot_was_set:
+    - requested_slot: flu
+  - slot_was_set:
+    - flu: tidak
+  - slot_was_set:
+    - flu: tidak
+  - slot_was_set:
+    - requested_slot: sakitTenggorokan
+  - slot_was_set:
+    - sakitTenggorokan: tidak
+  - slot_was_set:
+    - sakitTenggorokan: tidak
+  - slot_was_set:
+    - requested_slot: sesakNafas
+  - slot_was_set:
+    - sesakNafas: sesak
+  - slot_was_set:
+    - sesakNafas: sesak
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_health_assumption
+  - action: utter_goodbye_ina
+  - intent: goodbye_ina
+  - action: utter_goodbye_ina
+- story: health check pilek
+  steps:
+  - intent: greet_ina
+  - action: utter_show_feature_ina
+  - intent: ask_health_check_ina
+  - action: health_check_form
+  - active_loop: health_check_form
+  - slot_was_set:
+    - requested_slot: batuk
+  - slot_was_set:
+    - batuk: tidak
+  - slot_was_set:
+    - batuk: tidak
+  - slot_was_set:
+    - requested_slot: fever
+  - slot_was_set:
+    - fever: tidak
+  - slot_was_set:
+    - fever: tidak
+  - slot_was_set:
+    - requested_slot: flu
+  - slot_was_set:
+    - flu: pilek
+  - slot_was_set:
+    - flu: pilek
+  - slot_was_set:
+    - requested_slot: sakitTenggorokan
+  - slot_was_set:
+    - sakitTenggorokan: tidak
+  - slot_was_set:
+    - sakitTenggorokan: tidak
+  - slot_was_set:
+    - requested_slot: sesakNafas
+  - slot_was_set:
+    - sesakNafas: sedikit
+  - slot_was_set:
+    - sesakNafas: sedikit
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_health_assumption
+  - action: utter_goodbye_ina
+- story: Story from Conversation ID fcbc3c7097d94bc2994ea1695678b518
+  steps:
+  - intent: greet_ina
+  - action: utter_show_feature_ina
+  - intent: ask_health_check_ina
+  - action: health_check_form
+  - active_loop: health_check_form
+  - slot_was_set:
+    - requested_slot: batuk
+  - intent: batuk_entry
+    entities:
+    - batuk: Iya
+  - slot_was_set:
+    - batuk: Iya
+  - action: health_check_form
+  - slot_was_set:
+    - batuk: Iya
+  - slot_was_set:
+    - requested_slot: fever
+  - intent: fever_entry
+    entities:
+    - fever: Tidak
+  - slot_was_set:
+    - fever: Tidak
+  - action: health_check_form
+  - slot_was_set:
+    - fever: Tidak
+  - slot_was_set:
+    - requested_slot: flu
+  - intent: flu_entry
+    entities:
+    - flu: Tidak
+  - slot_was_set:
+    - flu: Tidak
+  - action: health_check_form
+  - slot_was_set:
+    - flu: Tidak
+  - slot_was_set:
+    - requested_slot: sakitTenggorokan
+  - intent: sakitTenggorokan_entry
+    entities:
+    - sakitTenggorokan: Iya
+  - slot_was_set:
+    - sakitTenggorokan: Iya
+  - action: health_check_form
+  - slot_was_set:
+    - sakitTenggorokan: Iya
+  - slot_was_set:
+    - requested_slot: sesakNafas
+  - intent: sesakNafas_entry
+    entities:
+    - sesakNafas: Tidak
+  - slot_was_set:
+    - sesakNafas: Tidak
+  - action: health_check_form
+  - slot_was_set:
+    - sesakNafas: Tidak
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_health_assumption
+  - action: utter_goodbye_ina
+
+- story: interactive_story_04032021_1
+  steps:
+  - intent: greet_ina
+  - action: utter_show_feature_ina
+  - intent: ask_health_check_ina
+  - action: health_check_form
+  - active_loop: health_check_form
+  - slot_was_set:
+    - requested_slot: batuk
+  - slot_was_set:
+    - batuk: Iya
+  - slot_was_set:
+    - batuk: Iya
+  - slot_was_set:
+    - requested_slot: fever
+  - slot_was_set:
+    - fever: Iya
+  - slot_was_set:
+    - fever: Iya
+  - slot_was_set:
+    - requested_slot: flu
+  - slot_was_set:
+    - flu: Iya
+  - slot_was_set:
+    - flu: Iya
+  - slot_was_set:
+    - requested_slot: sakitTenggorokan
+  - slot_was_set:
+    - sakitTenggorokan: Tidak
+  - slot_was_set:
+    - sakitTenggorokan: Tidak
+  - slot_was_set:
+    - requested_slot: sesakNafas
+  - slot_was_set:
+    - sesakNafas: Iya
+  - slot_was_set:
+    - sesakNafas: Iya
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_health_assumption
+  - action: utter_goodbye_ina

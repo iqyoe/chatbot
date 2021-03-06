@@ -1,0 +1,175 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 120
+  carry_over_slots_to_new_session: true
+intents:
+- fever_entry:
+    use_entities: true
+- greet_ina:
+    use_entities: true
+- flu_entry:
+    use_entities: true
+- sakitTenggorokan_entry:
+    use_entities: true
+- sesakNafas_entry:
+    use_entities: true
+- batuk_entry:
+    use_entities: true
+- ask_health_check_ina:
+    use_entities: true
+- goodbye_ina:
+    use_entities: true
+- stop:
+    use_entities: true
+- affirm_ina:
+    use_entities: true
+- deny_ina:
+    use_entities: true
+- mood_great_ina:
+    use_entities: true
+- mood_unhappy_ina:
+    use_entities: true
+- bot_challenge_ina:
+    use_entities: true
+- ask_ipower_ina:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+entities:
+- batuk
+- fever
+- flu
+- sakitTenggorokan
+- sesakNafas
+slots:
+  fever:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  flu:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  sesakNafas:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  sakitTenggorokan:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  batuk:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet_ina:
+  - text: Bagaimana kabarmu hari ini?
+  utter_cheer_up_ina:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Semoga ini bisa membuatmu lebih baik:'
+  utter_did_that_help_ina:
+  - text: apakah ini membantumu?
+  utter_happy_ina:
+  - text: Sip, semoga harimu menyenangkan! :)
+  utter_goodbye_ina:
+  - text: Terima Kasih, Sampai bertemu lagi ! :)
+  utter_iamabot_ina:
+  - text: Saya chat bot, dibuat menggunakan Rasa.
+  utter_show_feature_ina:
+  - text: |-
+      Hey ! saat ini bot bisa membantumu dalam melakukan hal ini:
+       1. Health Condition Check
+       2. ipower Guide
+  utter_ipower_guide:
+  - text: |-
+      Sementara ini bot masih belajar nih, bot hanya bisa memberikan beberapa tips nih:
+       1. Sambungkan koneksi internet ke VPN PwC Indonesia (menggunakan Global Protect)
+       2. Silakan akses link berikut https://ipowerid.eps.ad.pwcinternal.com/#/modules/legacy/open?url=gui%2fpwctime%2fdefault.aspx 
+       3. Anda dapat mencari nama client atau kode client anda pada search box diatas
+  utter_ask_fever:
+  - buttons:
+    - payload: /fever_entry{{"fever":"Iya"}}
+      title: Ya
+    - payload: /fever_entry{{"fever":"Tidak"}}
+      title: Tidak
+    text: Apakah hari ini Anda merasa demam ?
+  utter_ask_flu:
+  - buttons:
+    - payload: /flu_entry{{"flu":"Iya"}}
+      title: Ya
+    - payload: /flu_entry{{"flu":"Tidak"}}
+      title: Tidak
+    text: Apakah hari ini Anda pilek / flu ?
+  utter_ask_sesakNafas:
+  - buttons:
+    - payload: /sesakNafas_entry{{"sesakNafas":"Iya"}}
+      title: Ya
+    - payload: /sesakNafas_entry{{"sesakNafas":"Tidak"}}
+      title: Tidak
+    text: Apakah hari ini nafas Anda terasa sesak / sulit bernafas ?
+  utter_ask_sakitTenggorokan:
+  - buttons:
+    - payload: /sakitTenggorokan_entry{{"sakitTenggorokan":"Iya"}}
+      title: Ya
+    - payload: /sakitTenggorokan_entry{{"sakitTenggorokan":"Tidak"}}
+      title: Tidak
+    text: Apakah hari ini tenggorokan Anda terasa sakit ?
+  utter_ask_batuk:
+  - buttons:
+    - payload: /batuk_entry{{"batuk":"Iya"}}
+      title: Ya
+    - payload: /batuk_entry{{"batuk":"Tidak"}}
+      title: Tidak
+    text: Apakah hari ini Anda sering batuk-batuk ?
+  utter_health_record:
+  - text: |-
+      Oke bot sudah menerima laporan kesehatan mu hari ini: 
+       - Demam: {fever}
+       - Flu: {flu}
+       - Sesak nafas: {sesakNafas}
+       - Sakit Tenggorokan: {sakitTenggorokan}
+       - batuk: {batuk}
+  utter_submit:
+  - text: Pencatatan sudah selesai !
+  utter_please_take_multivitamin:
+  - text: Bot sarankan untuk tetap jaga pola hidup sehat ya ! kalau bisa minum multivitamin juga :)
+  utter_please_go_to_doctor:
+  - text: Sepertinya kesehatanmu kurang baik, bot sarankan untuk segera konsultasi dokter secepatnya ya !
+  utter_not_understand:
+  - text: Maaf, bot belum mengerti apa yang kamu maksud. Bisa diulangi lagi perintahnya ?
+actions:
+- action_health_assumption
+- action_submit
+- utter_goodbye_ina
+- utter_show_feature_ina
+forms:
+  health_check_form:
+    batuk:
+    - entity: batuk
+      type: from_entity
+    fever:
+    - entity: fever
+      type: from_entity
+    flu:
+    - entity: flu
+      type: from_entity
+    sakitTenggorokan:
+    - entity: sakitTenggorokan
+      type: from_entity
+    sesakNafas:
+    - entity: sesakNafas
+      type: from_entity
+e2e_actions: []

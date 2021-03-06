@@ -1,0 +1,205 @@
+version: "2.0"
+nlu:
+- intent: greet_ina
+  examples: |
+    - hey
+    - hello
+    - halo
+    - selamat pagi
+    - selamat siang
+    - selamat malam
+    - selamat sore
+    - pagi
+    - siang
+    - sore
+    - malam
+    - helo
+    - permisi
+    - hey bro
+    - selamatpagi
+    - selamtsiang
+    - selamatsore
+    - selamatmalam
+    - bot
+    - hi
+    - hai
+    - hi bot
+- intent: goodbye_ina
+  examples: |
+    - selamatpagi
+    - selamtsiang
+    - selamatsore
+    - selamatmalam
+    - bye
+    - dah
+    - thanks
+    - tengkyu
+    - sayonara
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm_ina
+  examples: |
+    - yes
+    - y
+    - betul
+    - setuju
+    - saya setuju
+    - betul sekali
+    - ok
+    - ok thanks
+    - mantap
+- intent: deny_ina
+  examples: |
+    - tidak
+    - ga
+    - gak
+    - nope
+    - g
+    - belum
+    - bukan
+    - sepertinya tidak
+    - tidak suka
+    - gasuka
+    - tidak mungkin
+    - ga mungkin
+    - ga juga
+    - tidak juga
+    - ga thanks
+    - tidak terima kasih
+- intent: mood_great_ina
+  examples: |
+    - sempurna
+    - bahagia
+    - baik
+    - mantap
+    - terbaik
+    - baik sekali
+    - saya merasa baik
+    - saya merasa terbaik
+    - mantap jiwa
+    - saya akan menyelamatkan dunia
+    - sangat baik
+    - sangat sangat baik
+    - sangat sempurna
+- intent: mood_unhappy_ina
+  examples: |
+    - hari ini menyedihkan
+    - hari ini jelek
+    - saya sedih
+    - sedih banget
+    - mengecewakan
+    - sangan mengecewakan
+    - kecewa
+    - sedih
+    - mau nangis
+    - ga bahagia
+    - tidak bahagia
+    - tidak baik
+    - buruk
+    - sangat buruk
+    - sangat tidak baik
+    - sedih bgt
+    - seedih
+    - sedih bat
+- intent: ask_ipower_ina
+  examples: |
+    - help i power
+    - help ipower
+    - bisa bantu tentang ipower?
+    - menggunakan ipower?
+    - bantuan ipower?
+    - bagaimana menggunakan ipower?
+    - akses ipower
+    - bantuan ipower
+    - bantuan i power
+    - apa itu ipower?
+    - ipower bermasalah
+    - ipower guide
+- intent: ask_health_check_ina
+  examples: |
+    - health check
+    - cek kesehatan
+    - check covid
+    - tes kesehatan
+    - cek apakah saya sehat
+    - check health
+    - saya mau cek kesehatan
+    - saya mau check kesehatan
+- intent: fever_entry
+  examples: |
+    - saya [sehat](fever)
+    - [iya](fever)
+    - [tidak](fever)
+    - [sakit](fever)
+    - [demam](fever)
+    - [panas](fever)
+    - [biasa saja](fever)
+    - [blm](fever)
+- intent: flu_entry
+  examples: |
+    - saya [sehat](flu)
+    - [sedang flu](flu)
+    - [iya](flu)
+    - [tidak](flu)
+    - [flu](flu)
+    - [pilek](flu)
+    - hidung saya [meler](flu)
+    - [blm](flu)
+- intent: sesakNafas_entry
+  examples: |
+    - saya [sehat](sesakNafas)
+    - [tidak](sesakNafas)
+    - [sakit](sesakNafas)
+    - [susah nafas](sesakNafas)
+    - [iya](sesakNafas)
+    - [sesak](sesakNafas)
+    - [blm](sesakNafas)
+    - [sesak nafas](sesakNafas)
+    - [sedikit](sesakNafas)
+- intent: sakitTenggorokan_entry
+  examples: |
+    - saya [sehat](sakitTenggorokan)
+    - [tidak](sakitTenggorokan)
+    - [iya](sakitTenggorokan)
+    - [sakit](sakitTenggorokan)
+    - [sakit tenggorokan](sakitTenggorokan)
+    - [tenggorokan kering](sakitTenggorokan)
+    - [blm](sakitTenggorokan)
+    - suara saya jadi [serak](sakitTenggorokan)
+    - [tenggorokan gatal](sakitTenggorokan)
+    - [tenggorokan sakit](sakitTenggorokan)
+- intent: batuk_entry
+  examples: |
+    - ya
+    - saya [sehat](batuk)
+    - [tidak](batuk)
+    - [iya](batuk)
+    - [batuk](batuk)
+    - [sakit](batuk)
+    - [blm](batuk)
+    - [sering](batuk)
+- intent: out_of_scope
+  examples: |
+    - itu bukan yang mau aku lakukan
+    - stop
+    - ga membantu
+    - sangat tidak membantu
+    - berapa umur
+    - pesen pizza
+    - kasih tau tentang cuacia saat ini
+    - ini tidak bekerja
+    - sudah dibilang
+    - sudah disebut
+    - tidak suka
+    - gasuka
+    - gamau kasih tau
+    - bukan urusan
+    - itu salah
+    - berhenti
+    - gajadi
+    - tidak jadi
+    - mau coba yang lain
+    - saya berubah pikiram
