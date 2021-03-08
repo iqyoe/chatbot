@@ -31,8 +31,6 @@ intents:
     use_entities: true
 - mood_unhappy_ina:
     use_entities: true
-- bot_challenge_ina:
-    use_entities: true
 - ask_ipower_ina:
     use_entities: true
 - out_of_scope:
