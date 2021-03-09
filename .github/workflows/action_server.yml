@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Action Server
 
 # Controls when the action will run. 
 on:
@@ -13,16 +13,15 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    name: Build Action Server image and upgrade Rasa X deployment
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - id: action_server
-      name: Build an action server with a custom actions
+    - name: action_server
       uses: RasaHQ/action-server-gha@master
       # Full list of parameters: https://github.com/RasaHQ/action-server-gha/tree/master#input-arguments
       with:
+        actions_directory: ./actions
         docker_image_name: 'account_username/repository_name'
         docker_registry_login: ${{ secrets.DOCKER_HUB_LOGIN }}
         docker_registry_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
